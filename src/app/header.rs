@@ -14,7 +14,7 @@ impl SimpleComponent for HeaderModel {
             #[wrap(Some)]
             set_title_widget = &gtk::Box {
                 gtk::Label {
-                    set_label: "Title",
+                    set_label: "GTK UI Gallery",
                     add_css_class: "heading",
                 }
             }

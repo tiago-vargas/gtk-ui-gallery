@@ -17,6 +17,7 @@ impl SimpleComponent for AppModel {
         main_window = gtk::Window {
             set_default_width: 500,
             set_default_height: 250,
+            set_title: Some("GTK UI Gallery"),
             set_titlebar: Some(model.header.widget()),
 
             gtk::Label {
