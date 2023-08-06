@@ -20,9 +20,11 @@ impl SimpleComponent for AppModel {
             set_title: Some("GTK UI Gallery"),
             set_titlebar: Some(model.header.widget()),
 
-            gtk::Label {
-                set_label: "Hello, World!",
-                add_css_class: "title-1",
+            gtk::ScrolledWindow {
+                gtk::Label {
+                    set_label: "Hello, World!",
+                    add_css_class: "title-1",
+                },
             },
         }
     }
