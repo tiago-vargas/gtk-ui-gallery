@@ -21,10 +21,12 @@ impl SimpleComponent for AppModel {
             set_titlebar: Some(model.header.widget()),
 
             gtk::ScrolledWindow {
-                gtk::Label {
-                    set_label: "Hello, World!",
-                    add_css_class: "title-1",
-                },
+                gtk::Box {
+                    set_orientation: gtk::Orientation::Vertical,
+                    set_margin_all: 16,
+                    set_spacing: 16,
+
+                }
             },
         }
     }
