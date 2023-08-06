@@ -26,6 +26,61 @@ impl SimpleComponent for AppModel {
                     set_margin_all: 16,
                     set_spacing: 16,
 
+                    gtk::Label {
+                        set_label: "Title 1",
+                        add_css_class: "title-1",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Title 2",
+                        add_css_class: "title-2",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Title 3",
+                        add_css_class: "title-3",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Title 4",
+                        add_css_class: "title-4",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Heading",
+                        add_css_class: "heading",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Body (default)",
+                        add_css_class: "body",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Caption Heading",
+                        add_css_class: "caption-heading",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Caption",
+                        add_css_class: "caption",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Monospace (0123456789)",
+                        add_css_class: "monospace",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Numeric (0123465789)",
+                        add_css_class: "numeric",
+                        set_halign: gtk::Align::Start,
+                    },
+                    gtk::Label {
+                        set_label: "Dim Label",
+                        add_css_class: "dim-label",
+                        set_halign: gtk::Align::Start,
+                    },
                 }
             },
         }
