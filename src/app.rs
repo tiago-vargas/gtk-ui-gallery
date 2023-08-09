@@ -69,60 +69,152 @@ impl WidgetTemplate for StyleExamplesSection {
             set_orientation: gtk::Orientation::Vertical,
             set_spacing: 16,
 
-            gtk::Label {
-                set_label: "Title 1",
-                add_css_class: "title-1",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Title 2",
-                add_css_class: "title-2",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Title 3",
-                add_css_class: "title-3",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Title 4",
-                add_css_class: "title-4",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Heading",
-                add_css_class: "heading",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Body (default)",
-                add_css_class: "body",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Caption Heading",
-                add_css_class: "caption-heading",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Caption",
-                add_css_class: "caption",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Monospace (0123456789)",
-                add_css_class: "monospace",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Numeric (0123465789)",
-                add_css_class: "numeric",
-                set_halign: gtk::Align::Start,
-            },
-            gtk::Label {
-                set_label: "Dim Label",
-                add_css_class: "dim-label",
-                set_halign: gtk::Align::Start,
+            gtk::Grid {
+                set_row_spacing: 16,
+
+                // Large Title
+                attach[1, 1, 1, 1] = &gtk::Label {
+                    set_label: "Large Title",
+                    add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 1, 1, 1] = &gtk::Label {
+                    set_label: Examples::LargeTitle.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Title 1
+                attach[1, 2, 1, 1] = &gtk::Label {
+                    set_label: "Title 1",
+                    add_css_class: "title-1",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 2, 1, 1] = &gtk::Label {
+                    set_label: Examples::Title1.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Title 2
+                attach[1, 3, 1, 1] = &gtk::Label {
+                    set_label: "Title 2",
+                    add_css_class: "title-2",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 3, 1, 1] = &gtk::Label {
+                    set_label: Examples::Title2.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Title 3
+                attach[1, 4, 1, 1] = &gtk::Label {
+                    set_label: "Title 3",
+                    add_css_class: "title-3",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 4, 1, 1] = &gtk::Label {
+                    set_label: Examples::Title3.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Title 4
+                attach[1, 5, 1, 1] = &gtk::Label {
+                    set_label: "Title 4",
+                    add_css_class: "title-4",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 5, 1, 1] = &gtk::Label {
+                    set_label: Examples::Title4.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Heading
+                attach[1, 6, 1, 1] = &gtk::Label {
+                    set_label: "Heading",
+                    add_css_class: "heading",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 6, 1, 1] = &gtk::Label {
+                    set_label: Examples::Heading.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Body
+                attach[1, 7, 1, 1] = &gtk::Label {
+                    set_label: "Body (default)",
+                    add_css_class: "body",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 7, 1, 1] = &gtk::Label {
+                    set_label: Examples::Body.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Caption Heading
+                attach[1, 8, 1, 1] = &gtk::Label {
+                    set_label: "Caption Heading",
+                    add_css_class: "caption-heading",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 8, 1, 1] = &gtk::Label {
+                    set_label: Examples::CaptionHeading.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Caption
+                attach[1, 9, 1, 1] = &gtk::Label {
+                    set_label: "Caption",
+                    add_css_class: "caption",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 9, 1, 1] = &gtk::Label {
+                    set_label: Examples::Caption.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Monospace
+                attach[1, 10, 1, 1] = &gtk::Label {
+                    set_label: "Monospace (0123456789)",
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 10, 1, 1] = &gtk::Label {
+                    set_label: Examples::Monospace.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Numeric
+                attach[1, 11, 1, 1] = &gtk::Label {
+                    set_label: "Numeric (0123465789)",
+                    add_css_class: "numeric",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 11, 1, 1] = &gtk::Label {
+                    set_label: Examples::Numeric.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
+
+                // Dim Label
+                attach[1, 12, 1, 1] = &gtk::Label {
+                    set_label: "Dim Label",
+                    add_css_class: "dim-label",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 12, 1, 1] = &gtk::Label {
+                    set_label: Examples::DimLabel.as_str(),
+                    add_css_class: "monospace",
+                    set_halign: gtk::Align::Start,
+                },
             },
         }
     }
@@ -170,6 +262,88 @@ impl WidgetTemplate for LoremIpsumSection {
                 set_wrap: true,
                 set_justify: gtk::Justification::Fill,
             },
+        }
+    }
+}
+
+enum Examples {
+    LargeTitle,
+    Title1,
+    Title2,
+    Title3,
+    Title4,
+    Heading,
+    Body,
+    CaptionHeading,
+    Caption,
+    Monospace,
+    Numeric,
+    DimLabel,
+}
+
+impl Examples {
+    fn as_str(&self) -> &str {
+        match self {
+            Self::LargeTitle =>  r#"gtk::Label {
+    set_label: "Large Title",
+    add_css_class: "large-title",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Title1 => r#"gtk::Label {
+    set_label: "Title 1",
+    add_css_class: "title-1",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Title2 => r#"gtk::Label {
+    set_label: "Title 2",
+    add_css_class: "title-2",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Title3 => r#"gtk::Label {
+    set_label: "Title 3",
+    add_css_class: "title-3",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Title4 =>  r#"gtk::Label {
+    set_label: "Title 4",
+    add_css_class: "title-4",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Heading => r#"gtk::Label {
+    set_label: "Heading",
+    add_css_class: "heading",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Body => r#"gtk::Label {
+    set_label: "Body (default)",
+    add_css_class: "body",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::CaptionHeading => r#"gtk::Label {
+    set_label: "Caption Heading",
+    add_css_class: "caption-heading",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Caption => r#"gtk::Label {
+    set_label: "Caption",
+    add_css_class: "caption",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Monospace => r#"gtk::Label {
+    set_label: "Monospace (0123456789)",
+    add_css_class: "monospace",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::Numeric => r#"gtk::Label {
+    set_label: "Numeric (0123465789)",
+    add_css_class: "numeric",
+    set_halign: gtk::Align::Start,
+}"#,
+            Self::DimLabel => r#"gtk::Label {
+    set_label: "Dim Label",
+    add_css_class: "dim-label",
+    set_halign: gtk::Align::Start,
+}"#,
         }
     }
 }
