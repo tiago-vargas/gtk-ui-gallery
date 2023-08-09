@@ -53,6 +53,22 @@ impl WidgetTemplate for LabelPage {
             set_margin_all: 16,
             set_spacing: 16,
 
+            #[template]
+            StyleExamplesSection {},
+
+            #[template]
+            LoremIpsumSection {},
+        }
+    }
+}
+
+#[relm4::widget_template(pub(crate))]
+impl WidgetTemplate for StyleExamplesSection {
+    view! {
+        gtk::Box {
+            set_orientation: gtk::Orientation::Vertical,
+            set_spacing: 16,
+
             gtk::Label {
                 set_label: "Title 1",
                 add_css_class: "title-1",
@@ -108,6 +124,16 @@ impl WidgetTemplate for LabelPage {
                 add_css_class: "dim-label",
                 set_halign: gtk::Align::Start,
             },
+        }
+    }
+}
+
+#[relm4::widget_template(pub(crate))]
+impl WidgetTemplate for LoremIpsumSection {
+    view! {
+        gtk::Box {
+            set_orientation: gtk::Orientation::Vertical,
+            set_spacing: 16,
 
             gtk::Label {
                 set_label: "Lorem Ipsum",
