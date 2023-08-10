@@ -2,9 +2,11 @@ use gtk::prelude::*;
 use relm4::*;
 
 pub(crate) mod header;
+pub(crate) mod content;
 
 pub(crate) struct AppModel {
     pub(crate) header: Controller<header::HeaderModel>,
+    content: Controller<content::ContentModel>,
 }
 
 #[relm4::component(pub(crate))]
@@ -20,10 +22,7 @@ impl SimpleComponent for AppModel {
             set_title: Some("GTK UI Gallery"),
             set_titlebar: Some(model.header.widget()),
 
-            gtk::Label {
-                set_label: "Hello, World!",
-                add_css_class: "title-1",
-            },
+            set_child: Some(model.content.widget())
         }
     }
 
@@ -36,7 +35,11 @@ impl SimpleComponent for AppModel {
             .launch(())
             .detach();
 
-        let model = AppModel { header };
+        let content = content::ContentModel::builder()
+            .launch(())
+            .detach();
+
+        let model = AppModel { header, content };
 
         let widgets = view_output!();
         ComponentParts { model, widgets }
