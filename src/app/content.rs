@@ -10,9 +10,53 @@ impl SimpleComponent for ContentModel {
     type Output = ();
 
     view! {
-        gtk::Label {
-            set_label: "Hello, World!",
-            add_css_class: "title-1",
+        gtk::Box {
+            set_orientation: gtk::Orientation::Vertical,
+            set_margin_all: 16,
+            set_spacing: 16,
+
+            gtk::Label {
+                set_label: "Grid",
+                add_css_class: "title-1",
+                set_halign: gtk::Align::Start,
+            },
+
+            gtk::Grid {
+                set_row_spacing: 16,
+                set_column_spacing: 16,
+
+                attach[1, 1, 1, 1] = &gtk::Label {
+                    set_label: "Cell 1",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 1, 1, 1] = &gtk::Label {
+                    set_label: "Cell 2",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[3, 1, 1, 1] = &gtk::Label {
+                    set_label: "Cell 3",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+
+                attach[1, 2, 1, 1] = &gtk::Label {
+                    set_label: "Cell 4",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[2, 2, 1, 1] = &gtk::Label {
+                    set_label: "Cell 5",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+                attach[3, 2, 1, 1] = &gtk::Label {
+                    set_label: "Cell 6",
+                    // add_css_class: "large-title",
+                    set_halign: gtk::Align::Start,
+                },
+            }
         }
     }
 
