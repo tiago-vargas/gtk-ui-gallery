@@ -1,11 +1,11 @@
 use gtk::prelude::*;
 use relm4::*;
 
-pub(crate) mod header;
+mod header;
 mod content;
 
 pub(crate) struct AppModel {
-    pub(crate) header: Controller<header::HeaderModel>,
+    header: Controller<header::HeaderModel>,
     content: Controller<content::ContentModel>,
 }
 
