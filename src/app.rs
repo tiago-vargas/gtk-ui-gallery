@@ -31,7 +31,7 @@ impl SimpleComponent for AppModel {
         root: &Self::Root,
         _sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let header: Controller<header::HeaderModel> = header::HeaderModel::builder()
+        let header = header::HeaderModel::builder()
             .launch(())
             .detach();
 
