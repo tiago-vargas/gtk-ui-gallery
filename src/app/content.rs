@@ -22,23 +22,29 @@ impl SimpleComponent for ContentModel {
             },
 
             gtk::Grid {
-                set_row_spacing: 16,
-                set_column_spacing: 16,
+                // set_row_spacing: 16,
+                // set_column_spacing: 16,
 
-                attach[1, 1, 1, 1] = &gtk::Label {
-                    set_label: "Cell 1",
-                    // add_css_class: "large-title",
-                    set_halign: gtk::Align::Start,
+                attach[1, 1, 1, 1] = &gtk::Frame {
+                    gtk::Label {
+                        set_label: "Cell 1",
+                        // add_css_class: "large-title",
+                        set_halign: gtk::Align::Start,
+                    }
                 },
-                attach[2, 1, 1, 1] = &gtk::Label {
-                    set_label: "Cell 2",
-                    // add_css_class: "large-title",
-                    set_halign: gtk::Align::Start,
+                attach[2, 1, 1, 1] = &gtk::Frame {
+                    gtk::Label {
+                        set_label: "Cell 2",
+                        // add_css_class: "large-title",
+                        set_halign: gtk::Align::Start,
+                    }
                 },
-                attach[3, 1, 1, 1] = &gtk::Label {
-                    set_label: "Cell 3",
-                    // add_css_class: "large-title",
-                    set_halign: gtk::Align::Start,
+                attach[3, 1, 1, 1] = &gtk::Frame {
+                    gtk::Label {
+                        set_label: "Cell 3",
+                        // add_css_class: "large-title",
+                        set_halign: gtk::Align::Start,
+                    }
                 },
 
                 attach[1, 2, 1, 1] = &gtk::Label {
