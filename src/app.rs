@@ -72,7 +72,7 @@ impl WidgetTemplate for StyleExamplesSection {
             gtk::Grid {
                 set_row_spacing: 16,
 
-                // Large Title
+                #[name = "large_title_label"]
                 attach[1, 1, 1, 1] = &gtk::Label {
                     set_label: "Large Title",
                     add_css_class: "large-title",
@@ -83,124 +83,124 @@ impl WidgetTemplate for StyleExamplesSection {
                     set_label: Examples::LargeTitle.as_str(),
                 },
 
-                // Title 1
-                attach[1, 2, 1, 1] = &gtk::Label {
+                #[name = "title_1_label"]
+                attach_next_to[Some(&large_title_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Title 1",
                     add_css_class: "title-1",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 2, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&title_1_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Title1.as_str(),
                 },
 
-                // Title 2
-                attach[1, 3, 1, 1] = &gtk::Label {
+                #[name = "title_2_label"]
+                attach_next_to[Some(&title_1_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Title 2",
                     add_css_class: "title-2",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 3, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&title_2_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Title2.as_str(),
                 },
 
-                // Title 3
-                attach[1, 4, 1, 1] = &gtk::Label {
+                #[name = "title_3_label"]
+                attach_next_to[Some(&title_2_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Title 3",
                     add_css_class: "title-3",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 4, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&title_3_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Title3.as_str(),
                 },
 
-                // Title 4
-                attach[1, 5, 1, 1] = &gtk::Label {
+                #[name = "title_4_label"]
+                attach_next_to[Some(&title_3_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Title 4",
                     add_css_class: "title-4",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 5, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&title_4_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Title4.as_str(),
                 },
 
-                // Heading
-                attach[1, 6, 1, 1] = &gtk::Label {
+                #[name = "heading_label"]
+                attach_next_to[Some(&title_4_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Heading",
                     add_css_class: "heading",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 6, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&heading_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Heading.as_str(),
                 },
 
-                // Body
-                attach[1, 7, 1, 1] = &gtk::Label {
+                #[name = "body_label"]
+                attach_next_to[Some(&heading_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Body (default)",
                     add_css_class: "body",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 7, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&body_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Body.as_str(),
                 },
 
-                // Caption Heading
-                attach[1, 8, 1, 1] = &gtk::Label {
+                #[name = "caption_heading_label"]
+                attach_next_to[Some(&body_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Caption Heading",
                     add_css_class: "caption-heading",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 8, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&caption_heading_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::CaptionHeading.as_str(),
                 },
 
-                // Caption
-                attach[1, 9, 1, 1] = &gtk::Label {
+                #[name = "caption_label"]
+                attach_next_to[Some(&body_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Caption",
                     add_css_class: "caption",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 9, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&caption_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Caption.as_str(),
                 },
 
-                // Monospace
-                attach[1, 10, 1, 1] = &gtk::Label {
+                #[name = "monospace_label"]
+                attach_next_to[Some(&caption_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Monospace (0123456789)",
                     add_css_class: "monospace",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 10, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&monospace_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Monospace.as_str(),
                 },
 
-                // Numeric
-                attach[1, 11, 1, 1] = &gtk::Label {
+                #[name = "numeric_label"]
+                attach_next_to[Some(&monospace_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Numeric (0123465789)",
                     add_css_class: "numeric",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 11, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&numeric_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::Numeric.as_str(),
                 },
 
-                // Dim Label
-                attach[1, 12, 1, 1] = &gtk::Label {
+                #[name = "dim_label_label"]
+                attach_next_to[Some(&numeric_label), gtk::PositionType::Bottom, 1, 1] = &gtk::Label {
                     set_label: "Dim Label",
                     add_css_class: "dim-label",
                     set_halign: gtk::Align::Start,
                 },
                 #[template]
-                attach[2, 12, 1, 1] = &CodeLabel {
+                attach_next_to[Some(&dim_label_label), gtk::PositionType::Right, 1, 1] = &CodeLabel {
                     set_label: Examples::DimLabel.as_str(),
                 },
             },
